@@ -1,0 +1,17 @@
+{
+    "name": "smart-fuel-oil-logger",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "author": "Keith Lea <keithl@gmail.com>",
+    "license": "MIT",
+    "scripts": {
+      "start": "node index.js"
+    },
+    "dependencies": {
+      "axios": "^0.24.0",
+      "winston": "^3.3.3",
+      "winston-daily-rotate-file": "^4.5.5"
+    }
+  }
+  

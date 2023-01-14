@@ -1,0 +1,65 @@
+{
+    "result": "ok",
+    "tanks": [
+      {
+        "tank_id": "131796",
+        "tank_name": "My Tank",
+        "low_level": "0.25",
+        "sensor_gallons": "243.14",
+        "sensor_rt": "2023-01-14 09:50:53",
+        "model_gallons": null,
+        "ddd": null,
+        "nominal": "330",
+        "fillable": "301",
+        "sensor_usg": "3.66191",
+        "battery": "Excellent",
+        "sensor_status": "Active",
+        "last_read": "1673707853",
+        "deadzone": "282",
+        "data_servers": "data.connectedconsumerfuel.com",
+        "refreshed": 1673710694,
+        "result": "ok",
+        "zip_code": "10520",
+        "can_fs": "1",
+        "pt_id": null,
+        "brand_locked": null,
+        "model_monitored": "0",
+        "sensors": [
+          {
+            "registration_id": "36561",
+            "sensor_id": "1183818970",
+            "description": "My Tank",
+            "registration_date": "2022-12-02 07:25:59",
+            "end_date": null,
+            "l_read": "2023-01-14 09:50:53",
+            "l_gallons": "243.14",
+            "l_battery": "Excellent",
+            "l_pulse": "1944",
+            "rlm": "2023-01-14 00:55:14",
+            "plm": "1904",
+            "ulm": "3.66191",
+            "ublf": null,
+            "rblf": null,
+            "usg": "3.66191",
+            "nrbf": "0"
+          }
+        ],
+        "buy": {
+          "brand_id": 4,
+          "brand_name": "FuelSnap",
+          "can_buy": "1",
+          "pro": "0",
+          "brand_btn": "FuelSnap/brand-btn.png",
+          "link_btn": "",
+          "buy_btn": "FuelSnap/buy-btn-click3.png",
+          "brand_ep": "https://buy.fuelsnap.com",
+          "link_ep": "",
+          "buy_ep": "https://buy.fuelsnap.com/find.php?ccf_ts=1673710694&ccf_tok=T4UC6E5L",
+          "brand_ep_ext": 1,
+          "can_sell": 1
+        }
+      }
+    ],
+    "Status": 200
+  }
+  
