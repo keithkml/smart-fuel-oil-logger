@@ -1,4 +1,5 @@
 const { createLogger, format, transports } = require("winston");
+const axios = require("axios");
 
 const cookie = process.env.SMART_FUEL_OIL_COOKIE;
 
@@ -18,7 +19,7 @@ const logger = createLogger({
   level: "debug",
   exitOnError: false,
   format: format.json(),
-  defaultMeta: { service: "smart-fuel-oil-logger" },
+  defaultMeta: { service: "nestlogger" },
   transports: [
     new transports.Http({
       host: "http-intake.logs.datadoghq.com",
@@ -57,15 +58,26 @@ const req = {
     "accept-language": "en-US,en;q=0.9",
     "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
     cookie: cookie,
-    Referer:
-      "https://app.smartoilgauge.com/?_ga=2.86265937.879959663.1673710230-1870300966.1670937271",
+    Referer: "https://app.smartoilgauge.com/",
+    "sec-ch-ua":
+      '"Not?A_Brand";v="8", "Chromium";v="108", "Google Chrome";v="108"',
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-platform": '"macOS"',
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-origin",
+    "x-requested-with": "XMLHttpRequest",
   },
 };
 
 axios(req)
   .then((result) => {
-    handleResponse(result.json());
-    process.exit(0);
+    if (result.status == 200 && result.data.result != "error") {
+      handleResponse(result.data);
+    } else {
+      console.error("Failed", result.status, result.statusText, result.data);
+      process.exit(1);
+    }
   })
   .catch((err) => {
     console.error(err);
